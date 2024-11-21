@@ -1,0 +1,42 @@
+name: geometric_lib
+
+on:
+  push:
+    branches: [ "main", "release" ]
+  pull_request:
+    branches: [ "main", "release", "develop" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Info
+      run: |
+        echo "$Name"
+        echo "$Group"
+        echo ${{github.repository_owner}}
+      env:
+        Name: Рзаев Давид Вагифович
+        Group: M3110
+    - name: Set up Python 3.13
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.13"
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Test with pytest
+      run: |
+          pytest
+    - name: Lint with flake8
+      run: |
+        flake8
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
