@@ -15,8 +15,7 @@ class TestArea:
 
     def test_negative_area(self):
         side = -5
-        with pytest.raises(ValueError, match="Length can't have\
-                            a negative value"):
+        with pytest.raises(ValueError, match="Length can't have a negative value"):
             area(side)
 
 
@@ -33,6 +32,5 @@ class TestPerimeter:
 
     def test_negative_perimeter(self):
         side = -10
-        with pytest.raises(ValueError, match="Length can't have\
-                            a negative value"):
+        with pytest.raises(ValueError, match="Length can't have a negative value"):
             perimeter(side)

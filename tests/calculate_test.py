@@ -16,8 +16,7 @@ class TestCalcSquare:
 
     def test_negative_area(self):
         side = -5
-        with pytest.raises(ValueError, match="Size can't have\
-                            a negative value"):
+        with pytest.raises(ValueError, match="Size can't have a negative value"):
             calc("square", "area", [side])
 
     def test_number_perimeter(self):
@@ -32,8 +31,7 @@ class TestCalcSquare:
 
     def test_negative_perimeter(self):
         side = -10
-        with pytest.raises(ValueError, match="Size can't have\
-                            a negative value"):
+        with pytest.raises(ValueError, match="Size can't have a negative value"):
             calc("square", "perimeter", [side])
 
 
@@ -50,8 +48,7 @@ class TestCalcCircle:
 
     def test_negative_area(self):
         r = -1000
-        with pytest.raises(ValueError, match="Size can't have\
-                            a negative value"):
+        with pytest.raises(ValueError, match="Size can't have a negative value"):
             calc("circle", "area", [r])
 
     def test_number_perimeter(self):
@@ -66,6 +63,5 @@ class TestCalcCircle:
 
     def test_negative_perimeter(self):
         r = -30
-        with pytest.raises(ValueError, match="Size can't have\
-                            a negative value"):
+        with pytest.raises(ValueError, match="Size can't have a negative value"):
             calc("circle", "perimeter", [r])

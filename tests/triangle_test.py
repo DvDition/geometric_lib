@@ -18,8 +18,7 @@ class TestArea:
     def test_negative_area(self):
         a = -5
         h = 10
-        with pytest.raises(ValueError, match="Length can't have\
-                            a negative value"):
+        with pytest.raises(ValueError, match="Length can't have a negative value"):
             area(a, h)
 
 
@@ -35,14 +34,12 @@ class TestPerimeter:
         a = 0
         b = 0
         c = 0
-        with pytest.raises(ValueError, match="Length can't have\
-                            a negative/zero value"):
+        with pytest.raises(ValueError, match="Length can't have a negative/zero value"):
             perimeter(a, b, c)
 
     def test_negative_perimeter(self):
         a = -10
         b = -100
         c = 20
-        with pytest.raises(ValueError, match="Length can't have\
-                            a negative/zero value"):
+        with pytest.raises(ValueError, match="Length can't have a negative/zero value"):
             perimeter(a, b, c)

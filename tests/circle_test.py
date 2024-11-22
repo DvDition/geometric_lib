@@ -16,8 +16,7 @@ class TestArea:
 
     def test_negative_area(self):
         r = -1000
-        with pytest.raises(ValueError, match="Radius can't have\
-                            a negative value"):
+        with pytest.raises(ValueError, match="Radius can't have a negative value"):
             area(r)
 
 
@@ -34,6 +33,5 @@ class TestPerimeter:
 
     def test_negative_perimeter(self):
         r = -30
-        with pytest.raises(ValueError, match="Radius can't have\
-                            a negative value"):
+        with pytest.raises(ValueError, match="Radius can't have a negative value"):
             perimeter(r)
